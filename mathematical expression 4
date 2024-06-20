@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    
+      Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        scanner.nextLine(); 
+        while (t-- > 0) {
+            String line = scanner.nextLine().trim();
+            String[] parts = line.split("\\s+");
+            
+            int A = Integer.parseInt(parts[0]);
+            char S = parts[1].charAt(0);
+            int B = Integer.parseInt(parts[2]);
+            char Q = parts[3].charAt(0);
+            int C = Integer.parseInt(parts[4]);
+            
+            int result;
+            if (S == '+') {
+                result = A + B;
+            } else if (S == '-') {
+                result = A - B;
+            } else if (S == '*') {
+                result = A * B;
+            } else {
+                result = Integer.MIN_VALUE; 
+            }
+            
+            if (result == C) {
+                System.out.println("Yes");
+            } else {
+                System.out.println(result);
+            }
+        }
+        
+    }
+}
