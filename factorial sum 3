@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        scanner.close();
+
+        int sumOfFactorials = sumOfDigitFactorials(num);
+        System.out.println(sumOfFactorials);
+    }
+
+    
+    public static int sumOfDigitFactorials(int num) {
+        int sum = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            sum += factorial(digit);
+            num /= 10;
+        }
+        return sum;
+    }
+
+    
+    public static int factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+}
+           
+
+     
