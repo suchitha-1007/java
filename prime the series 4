@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+   
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        scanner.close();
+
+        System.out.println(findNthTerm(n));
+    }
+
+   
+    public static int findNthTerm(int n) {
+        if (n % 2 == 1) {
+            
+            return (n - 1);
+        } else {
+          
+            return (n / 2 - 1);
+        }
+    }
+}
