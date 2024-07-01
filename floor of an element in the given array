@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+	public static int findFloor(int[] a, int key) {
+		int low = 0;
+		int high = a.length - 1;
+		int floor = -1;
+
+		while (low <= high) {
+			int mid = low + (high - low) / 2;
+
+			if (a[mid] == key) {
+				return a[mid];
+			}
+			if (a[mid] < key) {
+				floor = a[mid];
+				low = mid + 1;
+			} else {
+				high = mid - 1;
+			}
+		}
+		return floor;
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int n = scanner.nextInt();
+		int[] a = new int[n];
+		for (int i = 0; i < n; i++) {
+			a[i] = scanner.nextInt();
+		}
+		int key = scanner.nextInt();
+
+		System.out.println(findFloor(a,key));
+	}
+}
